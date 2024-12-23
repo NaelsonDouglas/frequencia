@@ -32,7 +32,7 @@ def sum_fs(df:pd.DataFrame) -> pd.DataFrame:
     return df
 
 
-def pipeline(doc:bytes, month:str='04') -> pd.DataFrame:
+def pipeline(doc:bytes, month:str='12') -> pd.DataFrame:
     df = fitz_doc_to_table(doc)
     df = filter_df_by_month(df, month)
     df = sum_fs(df)

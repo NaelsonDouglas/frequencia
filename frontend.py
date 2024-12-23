@@ -28,6 +28,12 @@ def main():
         summation['soma'] = summation.drop(columns=['nome']).sum(axis=1)
         st.table(summation)
         summation.to_excel('summation.xlsx')
+        st.download_button(
+            label='Download',
+            data=open('summation.xlsx', 'rb'),
+            file_name='summation.xlsx',
+            mime='application/vnd.openxmlformats-officedocument.spreadsheetml.sheet'
+        )
     return summation
 
 if __name__ == '__main__':
